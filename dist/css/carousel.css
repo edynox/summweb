@@ -8,6 +8,9 @@ body {
   color: #5a5a5a;
 }
 
+.bg-red {
+    background-color: #FF4C4C
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
