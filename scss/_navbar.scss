@@ -51,9 +51,10 @@
         }
         .navbar-nav > li > a,
         .navbar-nav > li > a:focus {
-            color: fade-out(white, .3);
+            color: white;
             &:hover {
                 color: white;
+                font-weight: bold;
             }
         }
         &.navbar-shrink {

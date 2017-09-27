@@ -3,6 +3,7 @@
     background: $theme-primary;
     background: -webkit-linear-gradient($theme-primary, darken($theme-primary, 5%));
     background: linear-gradient($theme-primary, darken($theme-primary, 5%));
+    color: white;
 }
 
 .text-primary {
@@ -22,16 +23,16 @@
     &:focus,
     &:active,
     &.active {
-        color: white;
+        color: $theme-primary;
         border-color: $theme-primary;
-        background-color: $theme-primary;
+        background-color: white;
     }
 }
 
 .btn-fill {
     color: black;
     border: 1px solid;
-    border-color: $theme-tertiary;
+    border-color: $theme-primary;
     &:hover,
     &:focus,
     &:active,
