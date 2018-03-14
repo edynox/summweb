@@ -11,6 +11,22 @@
 
         gtag('config', 'UA-89746100-2');
     </script>
+    <script>
+        /**
+         * Function that tracks a click on an outbound link in Analytics.
+         * This function takes a valid URL string as an argument, and uses that URL string
+         * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+         * using 'navigator.sendBeacon' in browser that support it.
+         */
+        var trackOutboundLink = function(url) {
+            gtag('event', 'click', {
+                'event_category': 'outbound',
+                'event_label': url,
+                'transport_type': 'beacon',
+                'event_callback': function(){document.location = url;}
+            });
+        }
+    </script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -157,7 +173,7 @@
             <h2 class="section-heading">Discover the simplicity!</h2>
             <p class="text-muted-bg">Get our beta</p>
             <div class="badges">
-              <a class="badge-link" href="http://summapp.io/beta">
+              <a class="badge-link" href="/beta" onclick="trackOutboundLink('https://summapp.io/beta'); return false;">
                   <img src="img/google-play-badge.svg" alt="">
               </a>
               <!--a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a-->
@@ -189,7 +205,7 @@
                   </a>
               </li-->
                 <li class="list-inline-item social-facebook">
-                  <a href="https://www.facebook.com/SummApp/">
+                  <a href="https://www.facebook.com/SummApp/" onclick="trackOutboundLink('https://www.facebook.com/SummApp/'); return false;">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
@@ -208,7 +224,7 @@
         <p>&copy; 2017 SumApp. All Rights Reserved.</p>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="legal.html#privacy">Privacy</a>
+            <a href="legal.html" onclick="trackOutboundLink('https://summapp.io/legal.html'); return false;">Privacy</a>
           </li>
           <!--li class="list-inline-item">
             <a href="legal.html#terms">Terms</a>
